@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './Composants/NavBar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './Composants/Home';
 import './App.css';
+import QuizzPopCult from './Composants/QuizzPopCult';
 
-function App() {
+
+
+export default function App() {
+
+    
+  
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/quizz" element={<QuizzPopCult/>} />      
+       
+      </Routes>
+      </BrowserRouter>
+  )
 }
-
-export default App;
